@@ -1,7 +1,8 @@
-package com.example.rentalservice;
+package com.example.rentalservice.model;
+
 
 public class Movie {
-    private ObjectId id;
+    private String id;
     private String title;
 
     private MovieGenre movieGenre;
@@ -29,7 +30,7 @@ public class Movie {
                 '}';
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
