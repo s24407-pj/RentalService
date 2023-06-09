@@ -1,8 +1,10 @@
 package com.example.rentalservice.model;
 
 
+import org.bson.types.ObjectId;
+
 public class Movie {
-    private String id;
+    private ObjectId id;
     private String title;
 
     private MovieGenre movieGenre;
@@ -18,6 +20,8 @@ public class Movie {
         this.description = description;
     }
 
+    public Movie() {
+    }
 
     @Override
     public String toString() {
@@ -30,7 +34,7 @@ public class Movie {
                 '}';
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
