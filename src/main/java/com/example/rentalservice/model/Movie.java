@@ -1,10 +1,8 @@
 package com.example.rentalservice.model;
 
 
-import org.bson.types.ObjectId;
-
 public class Movie {
-    private ObjectId id;
+    private String id;
     private String title;
 
     private MovieGenre movieGenre;
@@ -34,7 +32,7 @@ public class Movie {
                 '}';
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 

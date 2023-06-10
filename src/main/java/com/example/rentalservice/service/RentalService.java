@@ -1,7 +1,7 @@
 package com.example.rentalservice.service;
 
 import com.example.rentalservice.model.Movie;
-import org.bson.types.ObjectId;
+
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -15,7 +15,7 @@ public class RentalService {
         this.webClient = webClient;
     }
 
-    public Movie getMovieById(ObjectId id) {
+    public Movie getMovieById(String id) {
         String url = "http://localhost:8080/movies/" + id;
         WebClient webClient = WebClient.create();
 
@@ -26,7 +26,7 @@ public class RentalService {
                 .block();
     }
 
-    public HttpStatusCode returnMovie(ObjectId id) {
+    public HttpStatusCode returnMovie(String id) {
         String url = "http://localhost:8080/movies/" + id + "/availability/true";
         WebClient webClient = WebClient.create();
 
@@ -38,7 +38,7 @@ public class RentalService {
                 .getStatusCode();
     }
 
-    public HttpStatusCode rentMovie(ObjectId id) {
+    public HttpStatusCode rentMovie(String id) {
         String url = "http://localhost:8080/movies/" + id + "/availability/false";
         WebClient webClient = WebClient.create();
 

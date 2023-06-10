@@ -2,7 +2,6 @@ package com.example.rentalservice.controller;
 
 import com.example.rentalservice.model.Movie;
 import com.example.rentalservice.service.RentalService;
-import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,17 +17,17 @@ public class RentalRestController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@PathVariable ObjectId id) {
+    public ResponseEntity<Movie> getMovieById(@PathVariable String id) {
         return ResponseEntity.ok(rentalService.getMovieById(id));
     }
 
     @PatchMapping("/{id}/availability/true")
-    public ResponseEntity returnMovie(@PathVariable ObjectId id) {
+    public ResponseEntity returnMovie(@PathVariable String id) {
         return ResponseEntity.ok(rentalService.returnMovie(id));
     }
 
     @PatchMapping("/{id}/availability/false")
-    public ResponseEntity rentMovie(@PathVariable ObjectId id) {
+    public ResponseEntity rentMovie(@PathVariable String id) {
         return ResponseEntity.ok(rentalService.rentMovie(id));
     }
 
